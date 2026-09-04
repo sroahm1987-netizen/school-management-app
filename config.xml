@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.school.management" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>إدارة المدرسة</name>
+    <description>تطبيق إدارة المدرسة الابتدائية - نظام متكامل لإدارة الطلاب والمعلمين والدرجات</description>
+    <author email="sroahm1987@gmail.com" href="https://github.com/sroahm1987-netizen">فريق التطوير</author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon src="res/android/icon-36-ldpi.png" density="ldpi" />
+        <icon src="res/android/icon-48-mdpi.png" density="mdpi" />
+        <icon src="res/android/icon-72-hdpi.png" density="hdpi" />
+        <icon src="res/android/icon-96-xhdpi.png" density="xhdpi" />
+        <icon src="res/android/icon-144-xxhdpi.png" density="xxhdpi" />
+        <icon src="res/android/icon-192-xxxhdpi.png" density="xxxhdpi" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="EnableViewportScale" value="true" />
+</widget>
