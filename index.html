@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة المدرسة الابتدائية</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-school"></i>
+                <span>إدارة المدرسة الابتدائية</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" onclick="showSection('home')">الرئيسية</a></li>
+                <li><a href="#classes" class="nav-link" onclick="showSection('classes')">الفصول</a></li>
+                <li><a href="#students" class="nav-link" onclick="showSection('students')">الطلاب</a></li>
+                <li><a href="#teachers" class="nav-link" onclick="showSection('teachers')">المعلمون</a></li>
+                <li><a href="#grades" class="nav-link" onclick="showSection('grades')">الدرجات</a></li>
+                <li><a href="#attendance" class="nav-link" onclick="showSection('attendance')">الغياب</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="container">
+            <div class="welcome-section">
+                <h1>أهلاً وسهلاً بك في نظام إدارة المدرسة</h1>
+                <p>منصة متكاملة لإدارة العملية التعليمية</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>عدد الطلاب</h3>
+                    <p id="total-students">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chalkboard"></i>
+                    <h3>عدد الفصول</h3>
+                    <p>6</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-person-chalkboard"></i>
+                    <h3>عدد المعلمين</h3>
+                    <p id="total-teachers">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-book"></i>
+                    <h3>المقررات</h3>
+                    <p>12</p>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <h2>الإجراءات السريعة</h2>
+                <div class="actions-grid">
+                    <button class="action-btn" onclick="showSection('students')">
+                        <i class="fas fa-user-plus"></i>
+                        <span>إضافة طالب جديد</span>
+                    </button>
+                    <button class="action-btn" onclick="showSection('teachers')">
+                        <i class="fas fa-user-tie"></i>
+                        <span>إضافة معلم</span>
+                    </button>
+                    <button class="action-btn" onclick="showSection('grades')">
+                        <i class="fas fa-star"></i>
+                        <span>تسجيل الدرجات</span>
+                    </button>
+                    <button class="action-btn" onclick="showSection('attendance')">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>تسجيل الحضور</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="section">
+        <div class="container">
+            <h2>إدارة الفصول الدراسية</h2>
+            <div class="classes-grid">
+                <div class="class-card" onclick="selectClass(1)">
+                    <h3>الصف الأول الابتدائي</h3>
+                    <p class="class-info">
+                        <span id="students-1">0</span> طالب
+                    </p>
+                    <button class="btn btn-secondary" onclick="event.stopPropagation(); showStudentsByClass(1)">
+                        عرض الطلاب
+                    </button>
+                </div>
+                <div class="class-card" onclick="selectClass(2)">
+                    <h3>الصف الثاني الابتدائي</h3>
+                    <p class="class-info">
+                        <span id="students-2">0</span> طالب
+                    </p>
+                    <button class="btn btn-secondary" onclick="event.stopPropagation(); showStudentsByClass(2)">
+                        عرض الطلاب
+                    </button>
+                </div>
+                <div class="class-card" onclick="selectClass(3)">
+                    <h3>الصف الثالث الابتدائي</h3>
+                    <p class="class-info">
+                        <span id="students-3">0</span> طالب
+                    </p>
+                    <button class="btn btn-secondary" onclick="event.stopPropagation(); showStudentsByClass(3)">
+                        عرض الطلاب
+                    </button>
+                </div>
+                <div class="class-card" onclick="selectClass(4)">
+                    <h3>الصف الرابع الابتدائي</h3>
+                    <p class="class-info">
+                        <span id="students-4">0</span> طالب
+                    </p>
+                    <button class="btn btn-secondary" onclick="event.stopPropagation(); showStudentsByClass(4)">
+                        عرض الطلاب
+                    </button>
+                </div>
+                <div class="class-card" onclick="selectClass(5)">
+                    <h3>الصف الخامس الابتدائي</h3>
+                    <p class="class-info">
+                        <span id="students-5">0</span> طالب
+                    </p>
+                    <button class="btn btn-secondary" onclick="event.stopPropagation(); showStudentsByClass(5)">
+                        عرض الطلاب
+                    </button>
+                </div>
+                <div class="class-card" onclick="selectClass(6)">
+                    <h3>الصف السادس الابتدائي</h3>
+                    <p class="class-info">
+                        <span id="students-6">0</span> طالب
+                    </p>
+                    <button class="btn btn-secondary" onclick="event.stopPropagation(); showStudentsByClass(6)">
+                        عرض الطلاب
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Students Section -->
+    <section id="students" class="section">
+        <div class="container">
+            <h2>إدارة الطلاب</h2>
+            
+            <div class="form-section">
+                <h3>إضافة طالب جديد</h3>
+                <form id="studentForm" onsubmit="addStudent(event)">
+                    <div class="form-group">
+                        <label>اسم الطالب:</label>
+                        <input type="text" id="studentName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الجلوس:</label>
+                        <input type="number" id="studentID" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الفصل:</label>
+                        <select id="studentClass" required>
+                            <option value="">اختر الفصل</option>
+                            <option value="1">الصف الأول الابتدائي</option>
+                            <option value="2">الصف الثاني الابتدائي</option>
+                            <option value="3">الصف الثالث الابتدائي</option>
+                            <option value="4">الصف الرابع الابتدائي</option>
+                            <option value="5">الصف الخامس الابتدائي</option>
+                            <option value="6">الصف السادس الابتدائي</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني:</label>
+                        <input type="email" id="studentEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الهاتف:</label>
+                        <input type="tel" id="studentPhone" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">إضافة الطالب</button>
+                </form>
+            </div>
+
+            <div class="table-section">
+                <h3>قائمة الطلاب</h3>
+                <table id="studentsTable">
+                    <thead>
+                        <tr>
+                            <th>اسم الطالب</th>
+                            <th>رقم الجلوس</th>
+                            <th>الفصل</th>
+                            <th>البريد الإلكتروني</th>
+                            <th>رقم الهاتف</th>
+                            <th>العمليات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsList">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teachers Section -->
+    <section id="teachers" class="section">
+        <div class="container">
+            <h2>إدارة المعلمين</h2>
+            
+            <div class="form-section">
+                <h3>إضافة معلم جديد</h3>
+                <form id="teacherForm" onsubmit="addTeacher(event)">
+                    <div class="form-group">
+                        <label>اسم المعلم:</label>
+                        <input type="text" id="teacherName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>التخصص:</label>
+                        <input type="text" id="teacherSpecialty" placeholder="مثال: رياضيات" required>
+                    </div>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني:</label>
+                        <input type="email" id="teacherEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الهاتف:</label>
+                        <input type="tel" id="teacherPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الفصول المسؤول عنها:</label>
+                        <select id="teacherClass" multiple>
+                            <option value="1">الصف الأول الابتدائي</option>
+                            <option value="2">الصف الثاني الابتدائي</option>
+                            <option value="3">الصف الثالث الابتدائي</option>
+                            <option value="4">الصف الرابع الابتدائي</option>
+                            <option value="5">الصف الخامس الابتدائي</option>
+                            <option value="6">الصف السادس الابتدائي</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">إضافة المعلم</button>
+                </form>
+            </div>
+
+            <div class="table-section">
+                <h3>قائمة المعلمين</h3>
+                <table id="teachersTable">
+                    <thead>
+                        <tr>
+                            <th>اسم المعلم</th>
+                            <th>التخصص</th>
+                            <th>البريد الإلكتروني</th>
+                            <th>رقم الهاتف</th>
+                            <th>الفصول</th>
+                            <th>العمليات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teachersList">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grades Section -->
+    <section id="grades" class="section">
+        <div class="container">
+            <h2>إدارة الدرجات</h2>
+            
+            <div class="form-section">
+                <h3>تسجيل درجة جديدة</h3>
+                <form id="gradeForm" onsubmit="addGrade(event)">
+                    <div class="form-group">
+                        <label>اختر الطالب:</label>
+                        <select id="gradeStudent" required>
+                            <option value="">اختر الطالب</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>المادة الدراسية:</label>
+                        <select id="gradeCourse" required>
+                            <option value="">اختر المادة</option>
+                            <option value="عربي">اللغة العربية</option>
+                            <option value="رياضيات">الرياضيات</option>
+                            <option value="عربية">الدراسات الاجتماعية</option>
+                            <option value="علوم">العلوم</option>
+                            <option value="انجليزي">اللغة الإنجليزية</option>
+                            <option value="تربية إسلامية">التربية الإسلامية</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>الدرجة:</label>
+                        <input type="number" id="gradeValue" min="0" max="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label>نوع الامتحان:</label>
+                        <select id="gradeType" required>
+                            <option value="">اختر النوع</option>
+                            <option value="اختبار شهري">اختبار شهري</option>
+                            <option value="اختبار نهائي">اختبار نهائي</option>
+                            <option value="واجب منزلي">واجب منزلي</option>
+                            <option value="مشاركة">مشاركة</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">تسجيل الدرجة</button>
+                </form>
+            </div>
+
+            <div class="table-section">
+                <h3>قائمة الدرجات</h3>
+                <table id="gradesTable">
+                    <thead>
+                        <tr>
+                            <th>الطالب</th>
+                            <th>المادة</th>
+                            <th>الدرجة</th>
+                            <th>نوع الامتحان</th>
+                            <th>التاريخ</th>
+                            <th>العمليات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gradesList">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attendance Section -->
+    <section id="attendance" class="section">
+        <div class="container">
+            <h2>إدارة الحضور والغياب</h2>
+            
+            <div class="form-section">
+                <h3>تسجيل الحضور</h3>
+                <form id="attendanceForm" onsubmit="recordAttendance(event)">
+                    <div class="form-group">
+                        <label>اختر الفصل:</label>
+                        <select id="attendanceClass" onchange="loadClassStudents()" required>
+                            <option value="">اختر الفصل</option>
+                            <option value="1">الصف الأول الابتدائي</option>
+                            <option value="2">الصف الثاني الابتدائي</option>
+                            <option value="3">الصف الثالث الابتدائي</option>
+                            <option value="4">الصف الرابع الابتدائي</option>
+                            <option value="5">الصف الخامس الابتدائي</option>
+                            <option value="6">الصف السادس الابتدائي</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>التاريخ:</label>
+                        <input type="date" id="attendanceDate" required>
+                    </div>
+                    <div id="classStudentsList" class="students-attendance-list">
+                    </div>
+                    <button type="submit" class="btn btn-primary">حفظ الحضور</button>
+                </form>
+            </div>
+
+            <div class="table-section">
+                <h3>سجل الحضور</h3>
+                <table id="attendanceTable">
+                    <thead>
+                        <tr>
+                            <th>الطالب</th>
+                            <th>الفصل</th>
+                            <th>التاريخ</th>
+                            <th>الحالة</th>
+                            <th>العمليات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceList">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 نظام إدارة المدرسة الابتدائية. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
